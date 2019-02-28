@@ -14,8 +14,9 @@ namespace FriendSea
         AudioSource[] sources = new AudioSource[maxSounds];
         int currentSource = 0;
 
-        private void Start()
+        new void Awake()
         {
+            base.Awake();
             for (int i = 0; i < maxSounds; i++)
             {
                 sources[i] = Instantiate(SourceTemplate, transform);

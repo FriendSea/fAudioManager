@@ -12,8 +12,19 @@ namespace FriendSea
 
         public abstract float Volume { get; set; }
 
+        public void CuePlay()
+        {
+            MusicManager.Instance.CueMusic(this);
+        }
+
+        public void CueEnd()
+        {
+            MusicManager.Instance.EndMusic(this);
+        }
+
         public abstract void Start();
         public abstract void Stop();
         public abstract void Resume();
+
     }
 }
