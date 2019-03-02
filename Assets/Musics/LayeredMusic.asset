@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: LayeredMusic
   m_EditorClassIdentifier: 
   priority: 0
+  BPM: 200
   controlValue: 0
   Tracks:
   - Clip: {fileID: 8300000, guid: 60c4f1cf59db37e4b957c278a6b28af4, type: 3}

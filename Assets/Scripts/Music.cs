@@ -14,12 +14,19 @@ namespace FriendSea
         public override float Volume
         {
             get { return volume; }
-            set {
+            set
+            {
                 volume = value;
                 if (source != null)
                     source.volume = value;
             }
         }
+
+        public override float CurrentTime { get {
+                return source == null ?
+                    currentTime :
+                    source.time;
+            } }
 
         AudioSource source;
         float currentTime;

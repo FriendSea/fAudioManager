@@ -8,9 +8,13 @@ namespace FriendSea
     {
         [SerializeField]
         uint priority;
+        [SerializeField]
+        public uint BPM;
         public uint Priority { get { return priority; } }
 
         public abstract float Volume { get; set; }
+
+        public abstract float CurrentTime { get; }
 
         public void CuePlay()
         {
@@ -19,7 +23,7 @@ namespace FriendSea
 
         public void CueEnd()
         {
-            MusicManager.Instance.EndMusic(this);
+            MusicManager.Instance.CueEnd(this);
         }
 
         public abstract void Start();

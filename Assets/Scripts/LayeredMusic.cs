@@ -32,6 +32,16 @@ namespace FriendSea
             }
         }
 
+        public override float CurrentTime
+        {
+            get
+            {
+                return Tracks[0].source == null ?
+                    currentTime :
+                    Tracks[0].source.time;
+            }
+        }
+
         float currentTime;
 
         public override void Start()
@@ -42,10 +52,10 @@ namespace FriendSea
 
         public override void Stop()
         {
+            currentTime = Tracks[0].source.time;
             foreach (var t in Tracks)
             {
                 if (t.source == null) continue;
-                currentTime = t.source.time;
                 t.source.Stop();
                 t.source = null;
             }

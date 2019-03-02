@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Field1
   m_EditorClassIdentifier: 
   priority: 0
+  BPM: 164
   Clip: {fileID: 8300000, guid: 917d3aa882d52594d9818971cfceeff7, type: 3}

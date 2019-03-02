@@ -24,7 +24,7 @@ namespace FriendSea
 
         public void End()
         {
-            MusicManager.Instance.EndMusic(music);
+            MusicManager.Instance.CueEnd(music);
         }
     }
 }

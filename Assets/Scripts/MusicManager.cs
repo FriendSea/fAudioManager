@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace FriendSea
 {
@@ -65,8 +66,7 @@ namespace FriendSea
                 newMusic.Start();
             }
         }
-
-        public void EndMusic(MusicBase music)
+        public void CueEnd(MusicBase music)
         {
             if (!musics.Contains(music)) return;
             musics.Remove(music);
@@ -91,6 +91,42 @@ namespace FriendSea
                 if (newMusic != null)
                     newMusic.Volume = 1f;
             });
+        }
+
+        public UnityAction<uint> OnBeat { get; set; }
+        UnityAction<uint> OnBeatOnce { get; set; }
+
+        public uint GetCurrentBeat()
+        {
+            if (current == null) return 0;
+            return (uint)(current.CurrentTime * current.BPM / 60f);
+        }
+
+        public void SyncedCall(UnityAction<uint> action)
+        {
+            OnBeatOnce += action;
+        }
+
+        uint beforeBeat = 0;
+        void Update()
+        {
+            if (current == null)
+            {
+                if (OnBeatOnce != null)
+                    OnBeatOnce(0);
+                OnBeatOnce = null;
+                return;
+            }
+            var beat = GetCurrentBeat();
+            if (beat != beforeBeat)
+            {
+                if (OnBeat != null)
+                    OnBeat(beat);
+                if (OnBeatOnce != null)
+                    OnBeatOnce(beat);
+                OnBeatOnce = null;
+            }
+            beforeBeat = beat;
         }
     }
 }

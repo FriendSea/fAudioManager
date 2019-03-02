@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Battle
   m_EditorClassIdentifier: 
   priority: 10
+  BPM: 162
   Clip: {fileID: 8300000, guid: 48800ac12f08fd148baee7d737db0b0e, type: 3}

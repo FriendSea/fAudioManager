@@ -11,20 +11,31 @@ namespace FriendSea
         AudioClip Clip;
         [SerializeField, Range(0, 2)]
         float Volume = 1f;
+        [SerializeField]
+        bool Synced = false;
 
         public void Play()
         {
-            SEManager.Instance.PlaySE(Clip, Volume);
+            if (Synced)
+                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume));
+            else
+                SEManager.Instance.PlaySE(Clip, Volume);
         }
 
-        public void PlaySpatial(Vector3 psition)
+        public void PlaySpatial(Vector3 position)
         {
-            SEManager.Instance.PlaySE(Clip, Volume, psition);
+            if (Synced)
+                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume, position));
+            else
+                SEManager.Instance.PlaySE(Clip, Volume, position);
         }
 
         public void PlaySpatial(Transform transform)
         {
-            SEManager.Instance.PlaySE(Clip, Volume, transform.position);
+            if (Synced)
+                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume, transform.position));
+            else
+                SEManager.Instance.PlaySE(Clip, Volume, transform.position);
         }
     }
 }
