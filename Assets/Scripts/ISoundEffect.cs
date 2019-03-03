@@ -11,5 +11,6 @@ namespace FriendSea
         float Volume { get; }
         bool Spacial { get; }
         bool Exclusive { get; }
+		bool Synced { get; }
     }
 }

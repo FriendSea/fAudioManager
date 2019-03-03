@@ -5,37 +5,37 @@ using UnityEngine;
 namespace FriendSea
 {
     [CreateAssetMenu]
-    public class SoundEffect : ScriptableObject
+	public class SoundEffect : ScriptableObject, ISoundEffect
     {
         [SerializeField]
-        AudioClip Clip;
+        AudioClip clip;
         [SerializeField, Range(0, 2)]
-        float Volume = 1f;
-        [SerializeField]
-        bool Synced = false;
+        float volume = 1f;
+		[SerializeField]
+		bool spacial = true;
+		[SerializeField]
+		bool exclusive = false;
+		[SerializeField]
+		bool synced = false;
 
-        public void Play()
+		public bool Spacial { get { return spacial; }}
+
+		public bool Exclusive { get { return exclusive; }}
+
+		public AudioClip Clip{ get { return clip; }}
+
+		public float Volume { get { return volume; }}
+
+		public bool Synced{ get { return synced; }}
+
+		public void Play()
         {
-            if (Synced)
-                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume));
-            else
-                SEManager.Instance.PlaySE(Clip, Volume);
+			SEManager.Instance.PlaySE(this, null);
         }
 
-        public void PlaySpatial(Vector3 position)
-        {
-            if (Synced)
-                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume, position));
-            else
-                SEManager.Instance.PlaySE(Clip, Volume, position);
-        }
-
-        public void PlaySpatial(Transform transform)
-        {
-            if (Synced)
-                MusicManager.Instance.SyncedCall((beat) => SEManager.Instance.PlaySE(Clip, Volume, transform.position));
-            else
-                SEManager.Instance.PlaySE(Clip, Volume, transform.position);
-        }
-    }
+		public void Play(Transform transform)
+		{
+			SEManager.Instance.PlaySE(this, transform);
+		}
+	}
 }

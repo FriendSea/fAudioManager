@@ -9,15 +9,20 @@ namespace FriendSea
         [SerializeField]
         MusicBase music;
         [SerializeField]
-        bool CueOnEnable = true;
+        bool EndOnDisable;
 
-        private void OnEnable()
+        void OnEnable()
         {
-            if (CueOnEnable)
-                Cue();
+        	Cue();
         }
 
-        public void Cue()
+		void OnDisable()
+		{
+			if (EndOnDisable)
+				End();
+		}
+
+		public void Cue()
         {
             MusicManager.Instance.CueMusic(music);
         }

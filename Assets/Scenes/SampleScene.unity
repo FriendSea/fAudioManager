@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 288034449}
   - component: {fileID: 288034448}
   - component: {fileID: 288034447}
-  - component: {fileID: 288034446}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -509,19 +508,6 @@ RectTransform:
   m_AnchoredPosition: {x: -302, y: 2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &288034446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 288034444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 4c3bcc33debb457488a18feb09d12ba4, type: 2}
-  CueOnEnable: 0
 --- !u!114 &288034447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,8 +547,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 288034446}
-        m_MethodName: Cue
+      - m_Target: {fileID: 11400000, guid: 4c3bcc33debb457488a18feb09d12ba4, type: 2}
+        m_MethodName: CuePlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -619,7 +605,6 @@ GameObject:
   - component: {fileID: 298528395}
   - component: {fileID: 298528394}
   - component: {fileID: 298528393}
-  - component: {fileID: 298528396}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -685,8 +670,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 298528396}
-        m_MethodName: Cue
+      - m_Target: {fileID: 11400000, guid: d88672dd68fcb1449a26f8ab0afe8614, type: 2}
+        m_MethodName: CuePlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -732,19 +717,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 298528391}
   m_CullTransparentMesh: 0
---- !u!114 &298528396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 298528391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: d88672dd68fcb1449a26f8ab0afe8614, type: 2}
-  CueOnEnable: 0
 --- !u!1 &348289320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1039,6 @@ GameObject:
   - component: {fileID: 704267261}
   - component: {fileID: 704267260}
   - component: {fileID: 704267259}
-  - component: {fileID: 704267258}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1094,19 +1065,6 @@ RectTransform:
   m_AnchoredPosition: {x: -302, y: -54.999977}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &704267258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704267256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 4c3bcc33debb457488a18feb09d12ba4, type: 2}
-  CueOnEnable: 0
 --- !u!114 &704267259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,8 +1104,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 704267258}
-        m_MethodName: End
+      - m_Target: {fileID: 11400000, guid: 4c3bcc33debb457488a18feb09d12ba4, type: 2}
+        m_MethodName: CueEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1204,7 +1162,6 @@ GameObject:
   - component: {fileID: 758323464}
   - component: {fileID: 758323463}
   - component: {fileID: 758323462}
-  - component: {fileID: 758323461}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -1231,19 +1188,6 @@ RectTransform:
   m_AnchoredPosition: {x: -301.99997, y: -111.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &758323461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 758323459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 4c3bcc33debb457488a18feb09d12ba4, type: 2}
-  CueOnEnable: 0
 --- !u!114 &758323462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,10 +1229,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 769e05cf34e0e4140840c69339e8a579, type: 2}
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 758323460}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1416,7 +1360,6 @@ GameObject:
   - component: {fileID: 939677925}
   - component: {fileID: 939677924}
   - component: {fileID: 939677923}
-  - component: {fileID: 939677922}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -1443,19 +1386,6 @@ RectTransform:
   m_AnchoredPosition: {x: -303, y: 67}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &939677922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 939677920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 7f09065839a87ad4fbb55e9cd87ad723, type: 2}
-  CueOnEnable: 0
 --- !u!114 &939677923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,8 +1425,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 939677922}
-        m_MethodName: Cue
+      - m_Target: {fileID: 11400000, guid: 7f09065839a87ad4fbb55e9cd87ad723, type: 2}
+        m_MethodName: CuePlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1592,7 +1522,6 @@ GameObject:
   - component: {fileID: 1342910078}
   - component: {fileID: 1342910077}
   - component: {fileID: 1342910076}
-  - component: {fileID: 1342910075}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -1619,19 +1548,6 @@ RectTransform:
   m_AnchoredPosition: {x: -303, y: 135}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1342910075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1342910073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c98fe9a5f97142a4ce98e9b7e5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: c37844cbcb7418447b3ddddb42580658, type: 2}
-  CueOnEnable: 0
 --- !u!114 &1342910076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,8 +1587,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342910075}
-        m_MethodName: Cue
+      - m_Target: {fileID: 11400000, guid: c37844cbcb7418447b3ddddb42580658, type: 2}
+        m_MethodName: CuePlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
