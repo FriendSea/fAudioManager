@@ -10,6 +10,12 @@ namespace FriendSea
         [SerializeField]
         AudioClip Clip;
 
+        public Music(AudioClip clip, uint BPM)
+        {
+            Clip = clip;
+            this.BPM = BPM;
+        }
+
         float volume = 1f;
         public override float Volume
         {

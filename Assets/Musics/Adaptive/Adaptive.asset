@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a072edfdd447142946dc5a12173de1, type: 3}
+  m_Name: Adaptive
+  m_EditorClassIdentifier: 
+  priority: 0
+  BPM: 177
+  Blocks:
+  - track: {fileID: 11400000, guid: 6e22e166e3858ef48afe36809ddf94fa, type: 2}
+    StartBeat: 4
+    SwitchBeat: 36
+    FinalBeat: 40
+  - track: {fileID: 11400000, guid: 520dfad8824c3874ca2c15a533af823a, type: 2}
+    StartBeat: 4
+    SwitchBeat: 36
+    FinalBeat: 40
+  - track: {fileID: 11400000, guid: 49489d7f7d945564ea1f4f6b06573df5, type: 2}
+    StartBeat: 4
+    SwitchBeat: 36
+    FinalBeat: 40
+  - track: {fileID: 11400000, guid: a06687e0656fe9c4fab22822ebf36c73, type: 2}
+    StartBeat: 4
+    SwitchBeat: 36
+    FinalBeat: 40
+  - track: {fileID: 11400000, guid: 69499b4fb367b3e4bae5a73ddef56f38, type: 2}
+    StartBeat: 4
+    SwitchBeat: 36
+    FinalBeat: 40
+  nextTrack: 0
+  volume: 1

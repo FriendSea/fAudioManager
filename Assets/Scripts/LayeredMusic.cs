@@ -21,6 +21,7 @@ namespace FriendSea
             }
         }
 
+        [SerializeField, Range(0, 2)]
         float volume = 1f;
         public override float Volume
         {
