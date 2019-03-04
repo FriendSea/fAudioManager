@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: b88595af4d5dd9f4992c4e50b761e18f, type: 3}
   volume: 1
-  spacial: 1
-  exclusive: 0
-  synced: 0
+  spacial: 0
+  exclusive: 1
+  synced: 1

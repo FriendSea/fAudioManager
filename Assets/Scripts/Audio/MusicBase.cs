@@ -8,9 +8,11 @@ namespace FriendSea
     {
         [SerializeField]
         uint priority;
-        [SerializeField]
-        public uint BPM;
         public uint Priority { get { return priority; } }
+
+        [SerializeField]
+        uint BPM;
+        public uint Tempo{get{return BPM; } }
 
         public abstract float Volume { get; set; }
 

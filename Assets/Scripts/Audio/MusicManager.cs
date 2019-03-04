@@ -99,7 +99,7 @@ namespace FriendSea
         public uint GetCurrentBeat()
         {
             if (current == null) return 0;
-            return (uint)(current.CurrentTime * current.BPM / 60f);
+            return (uint)(current.CurrentTime * current.Tempo / 60f);
         }
 
         public void SyncedCall(UnityAction<uint> action)

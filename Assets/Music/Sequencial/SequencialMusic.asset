@@ -9,30 +9,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9a072edfdd447142946dc5a12173de1, type: 3}
-  m_Name: Adaptive
+  m_Name: SequencialMusic
   m_EditorClassIdentifier: 
   priority: 0
   BPM: 177
   Blocks:
-  - track: {fileID: 11400000, guid: 6e22e166e3858ef48afe36809ddf94fa, type: 2}
+  - Clip: {fileID: 8300000, guid: b7c699cf7af59254da2c9c46403924ad, type: 3}
     StartBeat: 4
     SwitchBeat: 36
     FinalBeat: 40
-  - track: {fileID: 11400000, guid: 520dfad8824c3874ca2c15a533af823a, type: 2}
+  - Clip: {fileID: 8300000, guid: 4de0f7460c5bd9b458fc258fe1a7ba9f, type: 3}
     StartBeat: 4
     SwitchBeat: 36
     FinalBeat: 40
-  - track: {fileID: 11400000, guid: 49489d7f7d945564ea1f4f6b06573df5, type: 2}
+  - Clip: {fileID: 8300000, guid: ebf1999abb088ad4882e725839116c7b, type: 3}
     StartBeat: 4
     SwitchBeat: 36
     FinalBeat: 40
-  - track: {fileID: 11400000, guid: a06687e0656fe9c4fab22822ebf36c73, type: 2}
+  - Clip: {fileID: 8300000, guid: 384daa9f1fef8644b835261c9b02cd53, type: 3}
     StartBeat: 4
     SwitchBeat: 36
     FinalBeat: 40
-  - track: {fileID: 11400000, guid: 69499b4fb367b3e4bae5a73ddef56f38, type: 2}
+  - Clip: {fileID: 8300000, guid: cea4a6ac924b4c84e9d762abe5362f34, type: 3}
     StartBeat: 4
     SwitchBeat: 36
     FinalBeat: 40
-  nextTrack: 0
+  nextTrack: 4
   volume: 1

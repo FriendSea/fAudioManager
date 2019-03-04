@@ -4,20 +4,23 @@ using UnityEngine;
 
 namespace FriendSea
 {
-    [CreateAssetMenu]
-    public class Music : MusicBase
+    public class MusicTrack
     {
-        [SerializeField]
-        AudioClip Clip;
+        AudioSource source;
 
-        public Music(AudioClip clip, uint BPM)
+        float currentTime;
+        public float CurrentTime
         {
-            Clip = clip;
-            this.BPM = BPM;
+            get
+            {
+                return source == null ?
+                    currentTime :
+                    source.time;
+            }
         }
 
         float volume = 1f;
-        public override float Volume
+        public float Volume
         {
             get { return volume; }
             set
@@ -28,22 +31,13 @@ namespace FriendSea
             }
         }
 
-        public override float CurrentTime { get {
-                return source == null ?
-                    currentTime :
-                    source.time;
-            } }
-
-        AudioSource source;
-        float currentTime;
-
-        public override void Start()
+        public void Start(AudioClip Clip)
         {
             currentTime = 0;
-            Resume();
+            Resume(Clip);
         }
 
-        public override void Stop()
+        public void Stop()
         {
             if (source == null)
                 return;
@@ -52,7 +46,7 @@ namespace FriendSea
             source = null;
         }
 
-        public override void Resume()
+        public void Resume(AudioClip Clip)
         {
             if (source == null)
                 source = MusicManager.Instance.GetMusicSource();
