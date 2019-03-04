@@ -38,6 +38,11 @@ namespace FriendSea
         List<MusicBase> musics = new List<MusicBase>();
         MusicBase current = null;
         const uint maxMusicCount = 8;
+
+        public IEnumerable<MusicBase> CueList { get {
+                return musics;
+            } }
+
         public void CueMusic(MusicBase music)
         {
             if (musics.Contains(music)) musics.Remove(music);
@@ -108,7 +113,7 @@ namespace FriendSea
         }
 
         uint beforeBeat = 0;
-        void Update()
+        void FixedUpdate()
         {
             if (current == null)
             {

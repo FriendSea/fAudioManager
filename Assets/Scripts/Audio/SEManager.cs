@@ -45,6 +45,10 @@ namespace FriendSea
 
 		void PlayImmediate(ISoundEffect se, Transform transform)
 		{
+            if (!se.Exclusive && !se.Spacial) {
+                UnSpacialSource.PlayOneShot(se.Clip, se.Volume);
+                return;
+            }
 			if (se.Exclusive)
 				foreach (var s in sources)
 					if (s.soundEffect == se)

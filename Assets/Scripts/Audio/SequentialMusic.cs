@@ -9,8 +9,10 @@ namespace FriendSea
     {
         [SerializeField]
         Block[] Blocks;
-        [SerializeField]
-        int nextTrack = -1;
+
+        public int CurrentBlock { get { return System.Array.IndexOf(Blocks, currentBlock); } }
+        public int NextBlock { get; set; }
+
         Block currentBlock;
         MusicTrack currentTrack = new MusicTrack();
         Block subBlock;
@@ -33,7 +35,10 @@ namespace FriendSea
 
         public override void Resume()
         {
-            if (currentBlock == null) return;
+            if (currentBlock == null) {
+                Start();
+                return;
+            }
             currentTrack.Resume(currentBlock.Clip);
             if (subBlock != null)
                 subTrack.Resume(subBlock.Clip);
@@ -58,8 +63,8 @@ namespace FriendSea
 
         void OnBeat(uint beat)
         {
-            var next = nextTrack < 0 ?
-                currentBlock : Blocks[nextTrack];
+            var next = (NextBlock < 0 || NextBlock >= Blocks.Length) ?
+                currentBlock : Blocks[NextBlock];
             //次のセクションの開始時刻
             if (beat == currentBlock.SwitchBeat - next.StartBeat)
             {
